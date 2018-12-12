@@ -1,5 +1,5 @@
 import React from 'react';
-import List from './list-item';
+//import ListItem from './list-item';
 import DisplayList from './display-list';
 //import DisplayList from '.'
 
@@ -13,6 +13,7 @@ export default class App extends React.Component {
 
     this.onSubmit = this.onSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.onEditChange = this.onEditChange.bind(this);
 
   }
 
@@ -44,11 +45,20 @@ export default class App extends React.Component {
 
   }
 
-  onEditClick = (index) => {
+  onEditChange = (index,value) => {
 
-    //value from text target
+    console.log(index);
+    console.log(value);
 
-    //setState
+    const changedArray = this.state.todos;
+
+    changedArray[index] = value;
+ 
+    this.setState({
+      
+      todos : changedArray 
+
+    });
  
   }
 
@@ -60,7 +70,7 @@ export default class App extends React.Component {
           <input value={this.state.title} onChange={this.onChange} />
           <button>Submit</button>
         </form>
-        <DisplayList todos={this.state.todos} onChange={this.onChange} onEditClick={this.onEditClick} onDeleteClick={this.onDeleteClick} />
+        <DisplayList todos={this.state.todos} onChange={this.onChange} onEditClick={this.onEditClick} onDeleteClick={this.onDeleteClick} onEditChange={this.onEditChange}/>
       </div>
     );
   }
