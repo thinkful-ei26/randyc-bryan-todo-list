@@ -6,7 +6,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       title: '',
-      todo: [],
+      todos: [],
     };
   }
 
@@ -21,7 +21,7 @@ export default class App extends React.Component {
     e.preventDefault();
     this.setState({
       title:'',
-      todo: [...this.state.todo, this.state.title]
+      todos: [...this.state.todos, this.state.title]
     });
   }
 
@@ -32,7 +32,7 @@ export default class App extends React.Component {
           <input value={this.state.title} onChange={this.onChange} />
           <button>Submit</button>
         </form>
-        <List todo={this.state.todo} />
+        <List todo={this.state.todos} />
       </div>
     );
   }

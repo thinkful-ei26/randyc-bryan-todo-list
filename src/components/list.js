@@ -1,12 +1,19 @@
 import React from 'react';
 
 export default function List(props) {
+
+  removeItem = (e) => {
+
+    this.todos.id;
+
+  }
+
  return ( 
- <ol>
-    {
-      props.todo.map((item, index) => <li key={index}>{item}</li>)
-    }
-  </ol>
+ 
+     
+      <li onClick = {() => (removeItem(todos.id))} key = {todos.id}> </li>
+     
+  
  )
 }
 
