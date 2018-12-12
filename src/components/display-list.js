@@ -1,11 +1,12 @@
 import React from 'react';
-import List from './list';
+import ListItem from './list-item';
 
 export default function DisplayList(props) {
 
-  const display = todos.map((todos) => { 
+  const display = props.todos.map((todos,index) => { 
   
-    return (<List todo={todos} key={todos.id} remove={remove} />)
+    return (<ListItem todos={todos} key={index} arrayIndex = {index}
+      onEditClick={props.onEditClick} onChange = {props.onChange} onDeleteClick={props.onDeleteClick}/>)
   
   })
    
